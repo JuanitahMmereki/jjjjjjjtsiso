@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HOME</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: serif;
+    }
+    
+    header {
+      background-color: #000;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      display: flex;
+    }
+    
+    nav li {
+      margin-left: 10px;
+    }
+    
+    nav li a {
+      display: block;
+      color: #fff;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    nav li a:hover,
+    .social-icons a:hover {
+      background-color:white; /* Change background color on hover */
+      color: black; /* Change text color on hover */
+    }
+    
+    .search-button {
+      margin-left: 10px;
+    }
+    
+    .search-button a {
+      display: flex;
+      align-items: center;
+      color: #fff;
+      text-decoration: none;
+    }
+    
+    .search-button img {
+      width: 20px;
+      height: auto;
+      margin-right: 5px;
+    }
+    
+    footer {
+      background-color: #000;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    .follow-text, .rights-text {
+      color: #fff;
+      font-family: serif;
+    }
+
+    .social-icons {
+      display: flex;
+      align-items: center;
+      margin-right: 700px; /* Add margin to the right */
+    }
+
+    .social-icons a {
+      display: inline-block;
+      margin-right: 7px; /* Adjust the spacing as needed */
+    }
+
+    .social-icons img {
+      width: 40px;
+      height: 40px;
+      background-color: #000;
+      transition: background-color 0.3s ease;
+    }
+
+    .social-icons a:hover img {
+      background-color: #000;
+    }
+    
+    .social-icons {
+      display: flex;
+      align-items: center;
+      margin-left: auto; /* Align to the right */
+    }
+    
+    .social-icons a {
+      display: inline-block;
+      margin-right: 15px;
+    }
+    
+    .social-icons img {
+      width: 40px; /* Adjust the size as needed */
+      height: 40px; /* Maintain aspect ratio */
+      background-color: #000; /* Set background color to black */
+      transition: background-color 0.3s ease; /* Add transition effect for color change */
+    }
+    
+    .social-icons a:hover img {
+      background-color: #000; /* Change background color on hover to black */
+    }
+  
+    .social-icons img[src="instagram-icon.png"] {
+      background-color: pink; /* Set Instagram icon background color */
+    }
+    
+    .social-icons img[src="facebook-icon.png"] {
+      background-color: blue; /* Set Facebook icon background color */
+    }
+    
+    .social-icons img[src="pinterest-icon.png"] {
+      background-color: rgb(255, 94, 0); /* Set Pinterest icon background color */
+    }
+    
+    .social-icons img[src="youtube-icon.png"] {
+      background-color: red; /* Set YouTube icon background color */
+    }
+    
+    .logo-text {
+      color: #fff;
+      font-size: 24px;
+      margin: 0 10px; /* Adjust the spacing as needed */
+    }
+    
+    .image-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px; /* Adjust the spacing between images */
+      margin-top: 20px; /* Add some top margin to separate from header */
+    }
+
+    .image-container img {
+      width: 250px; /* Adjust the width of the images */
+      height: auto;
+      transition: transform 0.3s ease; /* Add transition effect */
+    }
+
+    .image-container img:hover {
+      transform: scale(1.1); /* Increase scale on hover */
+    }
+
+    .image-container img.selected {
+      transform: translateY(-10px); /* Pull up the selected image */
+    }
+
+    .coming-soon {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .coming-soon .text-overlay {
+      font-family: serif;
+      font-size: 24px; /* Increase font size */
+      margin-top: 10px; /* Add top margin for spacing */
+    }
+
+    .image-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap; /* Allow images to wrap to the next line */
+      gap: 20px; /* Adjust the spacing between images */
+      margin-top: 20px; /* Add some top margin to separate from header */
+    }
+
+    .image-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .image-item .image-name {
+      margin-top: 10px; /* Add top margin for spacing */
+    }
+   
+    .new-image-container img {
+      width: 130px; /* Adjust the width of the images */
+      height: auto;
+      margin-right: 20px; /* Add margin to create space between images */
+      transition: transform 0.3s ease;
+    }
+
+    .new-image-container img:last-child {
+      margin-right: 0; /* Remove margin for the last image */
+    }
+
+    .new-image-container img:hover {
+      transform: scale(1.1);
+    }
+
+    .new-image-container img.selected {
+      transform: translateY(-10px);
+    }
+
+    .new-image-container img:hover {
+      transform: scale(1.1);
+    }
+    
+    .new-image-container img.selected {
+      transform: translateY(-10px);
+    }
+
+    .centered-text {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .centered-text h2 {
+      font-family: serif;
+      font-size: 35px; /* Adjust the font size as needed */
+    }
+
+    body {
+      font-family: serif;
+      overflow-y: scroll; /* Add scrollbar to the y-axis */
+      scrollbar-width: thin; /* Set the width of the scrollbar */
+      scrollbar-color: #000 #888; /* Set the color of the scrollbar (track color and thumb color) */
+    } 
+    .scrollable-images .image-container img {
+      width: 350px; /* Increase the width as desired */
+      height: auto;
+      margin-right: 20px; /* Add margin to create space between images */
+      transition: transform 0.3s ease;
+    }
+
+    .scrollable-images .image-container img:last-child {
+      margin-right: 0; /* Remove margin for the last image */
+    }
+
+    .scrollable-images .image-container img:hover {
+      transform: scale(1.1);
+    }
+
+    .scrollable-images .image-container img.selected {
+      transform: translateY(-10px);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="warner bros pic.jpg" alt="Logo" style="max-width: 100px; height: auto;">
+    <div class="logo-text">WARNER BROS</div>
+    <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li> 
+          <li><a href="Movies.html">Movies</a></li>
+          <li><a href="Tv Shows.html">TV Shows</a></li>
+          <li><a href="Games&Apps.html">Games & Apps</a></li>        
+          <li><a href="Collection.html">Collections</a></li>   
+          <li><a href="Feedback.html">Feedback</a></li>    
+          <li class="search-button"><a href="#" target="_blank"><img src="search icon.jpeg" alt="Search">Search</a></li>
+        </ul>
+      </nav>
+  </header>
+
+  <div class="image-details">
+    <div class="image-container">
+      <img src="Bachelor in paradise.jpg" alt="Image 2">
+      <div class="details">
+        <h2>Image Details</h2>
+        <p>Release date: August 10, 2018 (USA)</p>
+        <p>Content rating: PG-13</p>
+        <p>Genre: Action · Horror · Sci-Fi · Thriller</p>
+        <p>Directed by: Jon Turteltaub</p>
+        <p>Written by: Dean Georgaris · Jon Hoeber · Erich Hoeber · Steve Alten</p>
+        <p>Music by: Harry Gregson-Williams</p>
+        <p>Produced by: Belle Avery · Lorenzo di Bonaventura · Colin Wilson</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="image-above-footer">
+    <img src="white image.jpg" alt="New Image">
+  </div>
+  <footer>
+    <div class="follow-text">
+      Follow us:
+    </div>
+    <div class="social-icons">
+      <a href="#"><img src="instagramicon.jpg" alt="Instagram"></a>
+      <a href="#"><img src="facebook.jpg" alt="Facebook"></a>
+      <a href="#"><img src="pinterest.jpg" alt="Pinterest"></a>
+      <a href="#"><img src="youtube.jpg" alt="YouTube"></a>
+    </div>
+    <div class="rights-text">
+      All rights reserved © 2023 Warner Bros. Entertainment Inc.
+    </div>
+  </footer>
+</body>
+</html>
